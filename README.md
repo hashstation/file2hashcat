@@ -1,6 +1,7 @@
 # file2hashcat
 
 Extract hashes from your files into a format suitable for use with hashcat.
+Support Office documents, PDF, 7z, zip, rar archives and various crypto wallets.
 
 ## Prerequisites
 
