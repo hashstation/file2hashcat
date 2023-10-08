@@ -154,7 +154,7 @@ class FileFormat:
         else:
             hash_str = out
 
-            if any(ext in ['.rar', '.zip', '.json', '.electrum'] for ext in self.extensions):
+            if any(ext in ['.rar', '.zip', '.pdf', '.json', '.electrum'] for ext in self.extensions):
                 parts = hash_str.split(':', 2)
                 hash_str = parts[1] if len(parts) > 1 else parts[0]
 
@@ -167,7 +167,7 @@ class HashExtractor:
 
         self.formats = []
         self.formats.append(FileFormat(0, ['.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx'], [b'd0cf11e0a1b11ae1'], 'extractors/office2hashcat.py'))
-        self.formats.append(FileFormat(1, ['.pdf'], [b'25504446'], 'extractors/pdf2hashcat.py'))
+        self.formats.append(FileFormat(1, ['.pdf'], [b'25504446'], 'extractors/pdf2john.pl'))
         self.formats.append(FileFormat(2, ['.rar'], [b'526172211a07'], 'extractors/rar2hashcat'))
         self.formats.append(FileFormat(3, ['.zip'], [b'504b0304'], 'extractors/zip2hashcat'))
         self.formats.append(FileFormat(4, ['.7z'], [b'377abcaf271c'], 'extractors/7z2hashcat.pl'))
